@@ -14,3 +14,5 @@ pillow
 dotenv
 flask-sqlalchemy
 stripe
+
+DB Browser for SQLite - https://sqlitebrowser.org/dl/ (only if you want to view the database)
