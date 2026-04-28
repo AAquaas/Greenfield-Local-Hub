@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+  <h1>Edit A product</h1>
+  <form>
+  <table style="width:100%;">
+    <tr>
+        <th>Product name</th>
+        <th>Product Price</th>
+        <th>Product type</th>
+        <th>Product stock</th>
+
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>{{ product.product_name }}</td>
+        <td>£{{ '%0.2f' | format(product.product_price) }}</td>
+        <td>{{ product.product_type }}</td>
+        <td>{{ product.product_stock }}</td>
+        <td>
+           <button type="button" onclick="EditItem('{{ product.product_id }}')">Edit Item</button>
+        </td>
+        <td>
+            <button  onclick="DeleteItem('{{ product.product_id }}')">Remove Item</button>
+        </td>
+    </tr>
+    {% endfor %}
+  </table>
+  </form>
+
+</header>
+<script>
+    function DeleteItem(product_id) {
+        let url = "{{ url_for('main.delete_product', product_id='0') }}";
+        url = url.replace('0', encodeURIComponent(product_id));
+        window.location.href = url;
+    }
+
+    function EditItem(product_id) {
+        let url = "{{ url_for('main.edit_product', product_id='0') }}";
+        url = url.replace('0', encodeURIComponent(product_id));
+        window.location.href = url;
+    }
+</script>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+ <h1>Login</h1>
+    <form method="post">
+        <p>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email" />
+
+        </p>
+        <p>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" />
+            <input type="checkbox" onclick="showPassword()"> Show Password
+
+        </p>
+        <p>
+            <input type="submit" value="Send" name="Submit" />
+
+        </p>
+<div class="error-message">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <span class="flash-error">{{ message }}</span>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+</div>
+
+<script>
+    function showPassword() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+
+{% endblock %}

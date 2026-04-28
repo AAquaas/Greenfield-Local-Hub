@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <!-- Action points to your route, method must be POST -->
+    <form class="card" id="addToCartForm" method="POST" action="{{ url_for('main.addtocart') }}">
+        <img src="{{ url_for('static', filename='Images/' + file_image) }}" width="250" height="250">
+        <h3>{{ product_name }}</h3>
+        <p class="price">£{{ product_price }}</p>
+        <p>{{ product_stock }} remaining</p>
+
+        <!-- IMPORTANT: name attributes must match request.form.get() keys exactly -->
+        <input type="hidden" name="product_price" value="{{ product_price }}">
+        <input type="hidden" name="product_name" value="{{ product_name }}">
+        <input type="hidden" name="product_id" value="{{ product_id }}">
+
+        {% if product_stock > 0 %}
+
+
+
+        {% if quantity == None %}
+        <input type="range" min="1" max="{{product_stock}}" value="1" class="slider" id="myRange" name="name_of_slider">
+        <p>Quantity: <span id="demo">1</span></p>
+        {% else %}
+        <input type="range" min="1" max="{{product_stock}}" value="{{quantity}}" class="slider" id="myRange" name="name_of_slider">
+        <p>Quantity: <span id="demo">{{quantity}}</span></p>
+        {% endif %}
+
+
+        <input type="submit" id="addButton" value="Add to Cart" onclick="closeWin()">
+
+        {% endif %}
+    </form>
+</div>
+</body>
+
+<script>
+    // Keep ONLY the slider display logic
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo");
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    };
+
+
+    // NOTE: All the "fetch" and "event.preventDefault()" code has been removed
+</script>
+

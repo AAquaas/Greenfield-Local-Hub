@@ -1,0 +1,27 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<header>
+  <h1>Order History</h1>
+    <form>
+          <table style="width:100%;">
+            <tr>
+                <th>Order Type</th>
+                <th>Order Date</th>
+                <th>Order Total</th>
+                <th>Order Status</th>
+            </tr>
+            {% for orderitem in orderitems %}
+            <tr>
+                <td>{{ orderitem.order_type }}</td>
+                <td>{{ orderitem.order_date }}</td>
+                <td>£{{ '%0.2f' | format(orderitem.order_total) }}</td>
+                <td>{{ orderitem.order_status }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</header>
+
+{% endblock %}

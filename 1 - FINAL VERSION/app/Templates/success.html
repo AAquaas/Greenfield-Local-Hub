@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+img {
+  display: block;
+  margin: auto;
+}
+</style>
+
+<form class="center">
+    <img src="static/Images/tick.png" width="100" height="100" display="flex" justify-content="center">
+    <h1>Payment Success</h1>
+    <h3>£{{clean_total}} has been successfully charged to your account!</h3>
+    <br>
+<a href="{{ url_for('main.home') }}">
+    <button type="button">Return to Home Page</button>
+</a>
+</form>
+{% endblock %}

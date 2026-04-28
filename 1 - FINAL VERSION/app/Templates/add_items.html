@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Add new items</h1>
+    <form method="post" enctype="multipart/form-data">
+        <label for="product_name">Food Name:</label>
+        <input type="text" name="product_name" id="product_name" required /> <br><br>
+
+        <label for="product_price">Price:</label>
+        <input type="text" name="product_price" id="product_price" required /> <br><br>
+
+        <label for="product_type">Food Type:</label>
+        <input type="text" name="product_type" id="product_type" required /> <br><br>
+
+        <label for="product_stock">Stock:</label>
+        <input type="number" name="product_stock" id="product_stock" required /> <br><br>
+
+        <input type="file" name="file1"> <br><br>
+
+        <button type="submit">Add Item</button><br>
+    </form>
+{% endblock %}
