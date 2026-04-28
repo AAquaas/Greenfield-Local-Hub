@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greenfield Local Hub - {{subtitle}}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<nav>
+    <a href="/">Home</a>
+    <a href="/our_producers">Our Producers</a>
+
+    {% if current_user.is_authenticated %}
+        <a href="/logout">Log Out</a>
+        <a href="/products">Order Products</a>
+        <a href="/cart">Cart</a>
+
+        <div class="dropdown">
+            <button class="dropbtn">
+                Welcome, <b>{{ current_user.fname }} </b>!
+            </button>
+
+            <div class="dropdown-content">
+                <a href="/user_update">Update Account</a>
+                <a href="/change_password">Change Password</a>
+                <a href="/order_history">Past Orders</a>
+
+                {# Check if the user is an admin #}
+                {% if current_user.access_level == "ADMIN" %}
+                    <a href="/admin">Admin Panel</a>
+                {% endif %}
+
+                {% if current_user.access_level == "PRODUCER" %}
+                    <a href="/addproducts">Add a product</a>
+                    <a href="/producer-info">Producer info</a>
+                    <a href="/update-product">Update a product</a>
+                {% endif %}
+            </div>
+
+
+        </div>
+    <p style="color: #fff; padding: 7px 14px; font-size: 1.1em;"><b>{{ current_user.loyalty_points }}</b> points</p>
+
+    {% else %}
+        <a href="/login">Log In</a>
+        <a href="/signup">Sign Up</a>
+    {% endif %}
+</nav>
+
+
+<br></br>
+
+
+
+
+ <div class="footer">
+     <footer>©Greenfield Local Hub. All rights reserved <br>
+    <a href="privacy">Privacy & Data Policy</a> <br>
+    <a href="terms">Terms & Conditions</a> <br>
+    <a href="cookies">Cookies</a>
+
+
+     </footer>
+</div>
+
+
+{% block content %}
+
+{% endblock %}
+</body>
+</html>

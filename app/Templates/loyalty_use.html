@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <!-- Action points to your route, method must be POST -->
+<!-- CHANGE: action now points to main.use_points -->
+<form class="card" id="addToCartForm" method="POST" action="{{ url_for('main.use_points') }}">
+
+    {% if using == None %}
+    <input type="range" min="1" max="{{total}}" value="1" class="slider" id="points" name="name_of_slider">
+    <p>Points to use: <span id="demo">1</span></p>
+    {% else %}
+    <input type="range" min="1" max="{{total}}" value="{{using}}" class="slider" id="points" name="name_of_slider">
+    <p>Points to use: <span id="demo">{{using}}</span></p>
+    {% endif %}
+
+    <input type="submit" id="addButton" value="Use Points">
+</form>
+
+</div>
+</body>
+
+<script>
+    // Keep ONLY the slider display logic
+    var slider = document.getElementById("points");
+    var output = document.getElementById("demo");
+    slider.oninput = function() {
+        output.innerHTML = this.value;
+    };
+
+
+    // NOTE: All the "fetch" and "event.preventDefault()" code has been removed
+</script>
+

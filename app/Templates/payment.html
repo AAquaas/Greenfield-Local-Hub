@@ -1,0 +1,52 @@
+{% extends "home.html" %}
+
+{% block content %}
+
+<!-- url_for('payment_table',) -->
+
+      <form method="POST">
+            <p>
+                <label for="order_type">Order Type:</label>
+                <select name="order_type" id="order_type" required>
+                    <option value="" disabled selected>-- SELECT ORDER TYPE --</option>
+                    <option value="Collection">Collection</option>
+                    <option value="Delivery">Delivery</option>
+                </select>
+            </p>
+
+            <!-- Use a div with an ID that matches your JS, and hide it by default -->
+            <div id="address_section" style="display: none;">
+        <p>
+            <label for="postcode">Postcode:</label>
+            <input type="text" id="postcode" name="postcode" placeholder="Input your postcode" value="{{ current_user.postcode }}"/>
+
+        </p>
+        <p>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" placeholder="Input your address" value="{{ current_user.address }}"/>
+
+        </p>
+            </div>
+
+
+                   <form action="/create-checkout-session" method="POST">
+        <button type="submit" id="checkout-button">Checkout with stripe (BETA)</button>
+      </form>
+
+    </form>
+<script src="https://js.stripe.com/dahlia/stripe.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const orderSelect = document.getElementById('order_type');
+    const addressSection = document.getElementById('address_section');
+
+    orderSelect.addEventListener('change', function() {
+        if (this.value === 'Delivery') {
+            addressSection.style.display = 'block';
+        } else {
+            addressSection.style.display = 'none';
+        }
+    });
+});
+</script>
+{% endblock %}

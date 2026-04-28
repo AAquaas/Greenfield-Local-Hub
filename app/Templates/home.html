@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  /* 1. The Background Image covers the whole screen */
+  .full-page-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;       /* Behind everything */
+    background-image: url("{{ url_for('static', filename='Images/farm.jpg') }}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  /* 2. The Full-Width Header Bar */
+  .hero-text-bar {
+    position: fixed;    /* Fixes it relative to the window */
+    top: 50px;          /* ADJUST THIS to match your navbar height */
+    left: 0;
+    width: 100%;        /* Full width */
+    background-color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 5;         /* Above the image, below the dropdowns */
+  }
+</style>
+
+<div class="full-page-bg"></div>
+
+<div class="hero-text-bar">
+  <h1>Welcome to Greenfield Local Hub!</h1>
+</div>
+
+<div class="home-text-box">
+  <h4>The Greenfield Local Hub (GLH) is a cooperative of local farmers and food producers.
+    Each item of organic food produced is harvested and collected using eco-friendly methods.
+    We provide quality items at affordable prices so anyone here can enjoy the fresh taste of our products without burning a hole in your wallet.
+</h4>
+  <br><br>
+  <h1><u><b>Why Buy Locally?</b></u></h1>
+
+  <h4>Buying locally means you can get your favourite products like steak and milk fresher as well as it being better for the environment due to all of our producers being local, so there is minimal transport time to our store!
+</h4>
+</div>
+
+{% endblock %}

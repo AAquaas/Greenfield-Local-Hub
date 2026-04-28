@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+img {
+  display: block;
+  margin: auto;
+}
+</style>
+
+<form class="center">
+    <img src="static/Images/cross.png" width="100" height="100" display="flex" justify-content="center">
+    <h1>Payment Failed</h1>
+    <h3 >Please try again</h3>
+    <br>
+<a href="{{ url_for('main.cart') }}">
+    <button type="button">Return to Cart</button>
+</a>
+</form>
+{% endblock %}

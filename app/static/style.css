@@ -1,0 +1,360 @@
+
+/* Global box-sizing */
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.footer a {
+    color: white
+}
+
+/* Base styles for Greenfield Local Hub */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f2;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 6rem;
+}
+
+/* Header */
+
+
+/* Navigation */
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #3D8B2D;  /* Light Green */
+    padding: 7px 0;
+}
+nav a{
+    color: #fff;
+    padding: 7px 14px;
+    text-decoration: none;
+    font-size: 1.1em;
+    background-color: #3D8B2D;  /* Light Green */
+}
+nav a:hover, .dropdown:hover .dropbtn {
+    background-color: #327325; /* Darker green on hover */
+    border-radius: 5px;
+}
+
+
+}
+
+.dropdown {
+    padding: 0;
+    display: flex;
+    align-items: center; /* keeps everything level */
+}
+
+.dropbtn {
+    background-color: #3D8B2D; /* same green */
+    color: white;
+    border: none;
+    font-size: 1.1em;
+    padding: 7px 14px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 6;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  background-color: white;
+  font-size: 16px
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* Main content */
+main {
+    padding: 17px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2, h5, h3 {
+    text-align: center;
+}
+
+h5 {
+    color: #7d7c7c;
+}
+
+/* Forms */
+form{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input[type="text"], input[type="number"], input[type="password"],
+input[type="postcode"], input[type="address"], input[type="datetime-local"],
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea { resize: vertical; }
+
+input[type="submit"], button{
+    background-color: #3D8B2D;  /* Light Green */;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    width: auto;
+    padding-left: 10px;
+}
+input[type="submit"]:hover, button:hover{
+    background-color: #327325; /* Darker green on hover */;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #3D8B2D;  /* Light Green */
+    text-align: center;
+    color: white;
+}
+
+/* Grid container */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    background-color: /* Global box-sizing */
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Base styles for Rosa Technologies */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f2;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    position: relative;
+    padding-bottom: 6rem;
+}
+
+/* Header */
+header {
+    background-color: #3e2723;  /* Dark brown */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 3px solid #1a237e; /* Dark blue accent */
+}
+header h1 {
+    margin: 0;
+    font-size: 2.1em;
+    font-family: 'Georgia', serif;
+}
+
+
+/* Main content */
+main {
+    padding: 17px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1, h2, h5 {
+    text-align: center;
+}
+
+h5 {
+    color: #7d7c7c;
+}
+
+/* Forms */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+input[type="text"], input[type="number"], input[type="password"],
+input[type="postcode"], input[type="address"], input[type="datetime-local"],
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+select {
+    background-color: #c69e78;
+    appearance: none;
+}
+
+textarea { resize: vertical; }
+
+input[type="submit"], button {
+    background-color: #045097;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+input[type="submit"]:hover, button:hover {
+    background-color: #046FD2;
+}
+
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Footer */
+.footer {
+    position: absolute;
+    display: table-row;
+    height: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #556B2F;
+    text-align: center;
+    color: white;
+    padding: 1em 0;
+}
+
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: auto;
+  max-height: auto;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+
+.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding: 10px;
+  padding-bottom: 40px;
+}
+.container div {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  padding: 10px;
+  font-size: 30px;
+  text-align: center;
+}
+
+
+.card button {
+    background-color: #3D8B2D;  /* Light Green */;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.card button:hover {
+    background-color: #327325; /* Darker green on hover */;
+}
+
+.container input[type="submit"] {
+    background-color: #3D8B2D;  /* Light Green */;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.container input[type="submit"]:hover {
+    background-color: #327325; /* Darker green on hover */;
+}
+
+
+.home-text-box {
+background-color:#FFFFFFBF;
+color:black;
+padding:20px;
+height: auto;
+width: 1000px;
+line-height: 1.5;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+}
